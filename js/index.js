@@ -19,13 +19,14 @@ gridItems.forEach(gridItem => {
                 for (let squareToHighlight of Board.checkBoardStatus()[2]) {
                     gridItems[squareToHighlight].classList.add('win');
                 }
+                setTimeout(() => {
+                    gridContainer.style.opacity = '10%';
+                    resultScreen.style.display = 'flex';
+                    resultScreen.innerHTML = `<h4>${Board.checkBoardStatus()[1]} has won!</h4>
+                    <a href="#" class="button">Restart?</a>`;
 
-                gridContainer.style.opacity = '10%';
-                resultScreen.style.display = 'flex';
-                resultScreen.innerHTML = `<h4>${Board.checkBoardStatus()[1]} has won!</h4>
-                <a href="#" class="button">Restart?</a>`;
-
-                restartGame();
+                    restartGame();
+                }, 1000);
             } else if (turnNumber === 9) {
                 gridContainer.style.opacity = '10%';
                 resultScreen.style.display = 'flex';
