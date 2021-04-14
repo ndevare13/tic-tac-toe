@@ -49,11 +49,11 @@ function restartGame() {
     restartButton.addEventListener('click', event => {
         event.preventDefault();
         Board.initializeBoard();
+        gridContainer.style.opacity = '100%';
+        resultScreen.style.display = 'none';
 
         gridItems.forEach(gridItem => {
             gridItem.innerHTML = '';
-            gridContainer.style.opacity = '100%';
-            resultScreen.style.display = 'none';
             gridItem.classList.remove('win');
         });
     });
